@@ -116,15 +116,20 @@ nav {
   color: rgb(117, 117, 117);
 }
 
-img{
+.head img{
   max-width: 200px;
   height: auto;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .head{
   display: flex;
   /* background-color: aqua; */
+}
+
+.title{
+  margin-bottom: 5px;
 }
 
 .right-side{
@@ -135,20 +140,24 @@ img{
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  
 }
 
-.info-right {
-  /* margin-bottom: 10px; */
-  /* align-self: flex-start;
-  justify-content: flex-start;
-  align-content: flex-start; */
-  /* text-align: left; */
+.m-type {
+  font-style: italic;
+  color: #565656;
+}
+
+.info-left > *{
+  margin-bottom: 10px;
+}
+.info-right > *{
+  margin-bottom: 10px;
 }
 
 .star{
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 2px;
 }
 .star span{

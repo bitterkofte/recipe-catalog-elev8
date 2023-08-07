@@ -1,15 +1,3 @@
-console.log("başarılı")
-
-fetch("../meals.json")
-  .then((response) => response.json())
-  .then((data) => {
-    // data.map(m => console.log("YEMEK: ", m.title))
-    implement(data);
-  })
-  .catch((error) => {
-    console.error("ERR::", error);
-  });
-
 const implement = (meals) => {
   const mealTiles = meals.map((m) => {
     const tile = `
@@ -17,14 +5,12 @@ const implement = (meals) => {
       <div class="head">
         <img src="../assets/${m.image}" alt="img">
         <div class='right-side'>
-          <h3>${m.title}</h3>
+          <h3 class="title">${m.title}</h3>
           <div class='info'>
             <div class='info-left'>
               <p class='m-type'>${m.type}</p>
-              <p class='times'>
-                <i class="fa-solid fa-clock"></i> : ${m.prep} <br>
-                <i class="fa-solid fa-bowl-rice"></i> : ${m.time}
-              </p>
+              <p class='prep'><i class="fa-solid fa-clock"></i> : ${m.prep}</p>
+              <p class='time'><i class="fa-solid fa-bowl-rice"></i> : ${m.time}</p>
             </div>
             <div class='info-right'>
               <div class="star">
@@ -104,3 +90,5 @@ const implement = (meals) => {
     // container.appendChild(e);
   });
 };
+
+implement(meals);
